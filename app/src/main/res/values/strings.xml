@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TheMerchant</string>
+    <string name="app_name">Merchant</string>
     <string name="hello">What up</string>
     <string name="leave">Leave the city</string>
     <string name="closegame">Leave the game</string>
@@ -31,6 +31,7 @@
     <string name="redhawk">Red Hawk</string>
     <string name="seameet">Seameet</string>
     <string name="snakescanyon">Snake’s Canyon</string>
+    <string name="quelenesti">Quelenesti</string>
     <string name="loadgame">Load a saved game</string>
     <string name="title_activity_main2">MainActivity2</string>
     <!-- Strings used for fragments for navigation -->

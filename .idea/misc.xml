@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2794871794871795" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2794871794871795" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/activity_city_harbour.xml" value="0.1452991452991453" />
         <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/activity_city_land.xml" value="0.27309782608695654" />
-        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/activity_main.xml" value="0.27309782608695654" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/fragment_first.xml" value="0.26623931623931624" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/layout/fragment_second.xml" value="0.26623931623931624" />
+        <entry key="..\:/Users/thor2332/AndroidStudioProjects/TheMerchant/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2794871794871795" />
       </map>
     </option>
   </component>

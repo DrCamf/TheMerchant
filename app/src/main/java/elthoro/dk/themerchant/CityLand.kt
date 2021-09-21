@@ -12,9 +12,10 @@ class CityLand : AppCompatActivity() {
         setContentView(R.layout.activity_city_land)
         var mediaPlayer = MediaPlayer.create(this, R.raw.medievalfantasycity)
         mediaPlayer?.start()
-        val tv_click_me = findViewById(R.id.leavecity) as TextView
 
-        tv_click_me.setOnClickListener {
+        val city_me = findViewById(R.id.leavecity) as TextView
+
+        city_me.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             // start your next activity
             startActivity(intent)

@@ -23,10 +23,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
+                <!-- Cities -->
                 <ImageView
                     android:id="@+id/dasmap"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:scaleType="center"
                     android:src="@drawable/maplargecitieswithroutes" />
 
@@ -34,11 +35,11 @@
                     android:id="@+id/citysilvercrest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/silvercrest"
-                    android:layout_marginTop="140dp"
                     android:layout_marginLeft="1400dp"
-                    android:textSize="17dp"
-                    android:background="@color/lightgray"/>
+                    android:layout_marginTop="155dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/silvercrest"
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/citycliffsedge"
                     android:layout_width="wrap_content"
@@ -46,9 +47,8 @@
                     android:text="@string/cliffsedge"
                     android:layout_marginTop="195dp"
                     android:layout_marginLeft="1200dp"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:background="@color/lightgray"/>
-
                 <TextView
                     android:id="@+id/citycoldwater"
                     android:layout_width="wrap_content"
@@ -57,8 +57,7 @@
                     android:layout_marginTop="430dp"
                     android:background="@color/lightgray"
                     android:text="@string/coldwater"
-                    android:textSize="17dp" />
-
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/cityarlansway"
                     android:layout_width="wrap_content"
@@ -67,7 +66,7 @@
                     android:layout_marginTop="525dp"
                     android:background="@color/lightgray"
                     android:text="@string/arlansway"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/citydimbar"
                     android:layout_width="wrap_content"
@@ -75,9 +74,8 @@
                     android:text="@string/dimbar"
                     android:layout_marginTop="535dp"
                     android:layout_marginLeft="635dp"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:background="@color/lightgray"/>
-
                 <TextView
                     android:id="@+id/citymarlburg"
                     android:layout_width="wrap_content"
@@ -86,8 +84,7 @@
                     android:layout_marginTop="378dp"
                     android:background="@color/lightgray"
                     android:text="@string/marlburg"
-                    android:textSize="17dp" />
-
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/cityduskendale"
                     android:layout_width="wrap_content"
@@ -96,7 +93,7 @@
                     android:layout_marginTop="545dp"
                     android:background="@color/lightgray"
                     android:text="@string/duskendale"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/cityeasthaven"
                     android:layout_width="wrap_content"
@@ -104,9 +101,8 @@
                     android:text="@string/easthaven"
                     android:layout_marginTop="460dp"
                     android:layout_marginLeft="850dp"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:background="@color/lightgray"/>
-
                 <TextView
                     android:id="@+id/cityelbright"
                     android:layout_width="wrap_content"
@@ -114,9 +110,8 @@
                     android:text="@string/elbright"
                     android:layout_marginTop="410dp"
                     android:layout_marginLeft="1062dp"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:background="@color/lightgray"/>
-
                 <TextView
                     android:id="@+id/cityironforge"
                     android:layout_width="wrap_content"
@@ -125,8 +120,7 @@
                     android:layout_marginTop="658dp"
                     android:background="@color/lightgray"
                     android:text="@string/ironforge"
-                    android:textSize="17dp" />
-
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/citykarasvale"
                     android:layout_width="wrap_content"
@@ -135,8 +129,7 @@
                     android:layout_marginTop="790dp"
                     android:background="@color/lightgray"
                     android:text="@string/karasvale"
-                    android:textSize="17dp" />
-
+                    android:textSize="17sp" />
                 <TextView
                     android:id="@+id/citylastlock"
                     android:layout_width="wrap_content"
@@ -145,16 +138,159 @@
                     android:layout_marginTop="878dp"
                     android:background="@color/lightgray"
                     android:text="@string/lastlock"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityleeside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="883dp"
+                    android:layout_marginTop="1135dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/leeside"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citymahalaga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="763dp"
+                    android:layout_marginTop="1295dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/mahalaga"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citymarrenseve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1023dp"
+                    android:layout_marginTop="1120dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/marrenseve"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityirragin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1135dp"
+                    android:layout_marginTop="1025dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/irragin"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citylakestown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1345dp"
+                    android:layout_marginTop="935dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/lakestown"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityhillfar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1230dp"
+                    android:layout_marginTop="695dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/hillfar"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citymoonbright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1455dp"
+                    android:layout_marginTop="730dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/moonbright"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citynargorthon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1155dp"
+                    android:layout_marginTop="515dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/nargorthon"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityorrinshire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1625dp"
+                    android:layout_marginTop="690dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/orrinshire"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citypinnellapass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1595dp"
+                    android:layout_marginTop="580dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/pinnellapass"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityramshorn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1675dp"
+                    android:layout_marginTop="430dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/ramshorn"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citysnakescanyon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1425dp"
+                    android:layout_marginTop="430dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/snakescanyon"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/citynorthpass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1185dp"
+                    android:layout_marginTop="360dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/northpass"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityseameet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1290dp"
+                    android:layout_marginTop="265dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/seameet"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityquelenesti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1400dp"
+                    android:layout_marginTop="310dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/quelenesti"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/cityredhawk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1520dp"
+                    android:layout_marginTop="252dp"
+                    android:background="@color/lightgray"
+                    android:text="@string/redhawk"
+                    android:textSize="17sp" />
+
+                <!-- menu and donkey -->
                 <ImageView
                     android:id="@+id/thedonkey"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="580dp"
-                    android:layout_marginTop="470dp"
-
-
-                    />
+                    android:layout_marginTop="470dp" />
 
                 <TextView
                     android:id="@+id/newgame"
@@ -164,8 +300,7 @@
                     android:layout_marginTop="130dp"
                     android:background="@color/cardview_light_background"
                     android:text="@string/newgame"
-                    android:textSize="27dp" />
-
+                    android:textSize="27sp" />
                 <TextView
                     android:id="@+id/loadgame"
                     android:layout_width="wrap_content"
@@ -173,10 +308,8 @@
                     android:text="@string/loadgame"
                     android:layout_marginTop="180dp"
                     android:layout_marginLeft="40dp"
-                    android:textSize="27dp"
+                    android:textSize="27sp"
                     android:background="@color/cardview_light_background"/>
-
-
                 <TextView
                     android:id="@+id/close"
                     android:layout_width="wrap_content"
@@ -184,7 +317,7 @@
                     android:text="@string/closegame"
                     android:layout_marginTop="230dp"
                     android:layout_marginLeft="40dp"
-                    android:textSize="27dp"
+                    android:textSize="27sp"
                     android:background="@color/cardview_light_background"/>
 
             </RelativeLayout>
