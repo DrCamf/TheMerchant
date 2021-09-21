@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">TheMerchant</string>
+    <string name="hello">What up</string>
+    <string name="leave">Leave the city</string>
+    <string name="closegame">Leave the game</string>
+    <string name="newgame">Start a game</string>
+    <string name="silvercrest">SilverCrest</string>
+    <string name="cliffsedge">Cliffs Edge</string>
+    <string name="coldwater">Cold Water</string>
+    <string name="arlansway">Arlan’s Way</string>
+    <string name="dimbar">Dimbar</string>
+    <string name="marlburg">Marlburg</string>
+    <string name="duskendale">Duskendale</string>
+    <string name="easthaven">Easthaven</string>
+    <string name="elbright">Elbright</string>
+    <string name="ironforge">Ironforge</string>
+    <string name="karasvale">Kara’s Vale</string>
+    <string name="lastlock">Last Lock</string>
+    <string name="leeside">Leeside</string>
+    <string name="mahalaga">Mahalaga</string>
+    <string name="hillfar">Hillfar</string>
+    <string name="lakestown">Lakestown</string>
+    <string name="marrenseve">Marren’s Eve</string>
+    <string name="irragin">Irragin</string>
+    <string name="moonbright">Moonbright</string>
+    <string name="nargorthon">Nargorthon</string>
+    <string name="pinnellapass">Pinnella Pass</string>
+    <string name="orrinshire">Orrinshire</string>
+    <string name="northpass">Northpass</string>
+    <string name="ramshorn">Ramshorn</string>
+    <string name="redhawk">Red Hawk</string>
+    <string name="seameet">Seameet</string>
+    <string name="snakescanyon">Snake’s Canyon</string>
+    <string name="loadgame">Load a saved game</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
