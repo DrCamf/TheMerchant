@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         title = "The Merchant"
 
-        //Cities
+        //****************** Cities *********************************************
         //Harbours
         val coldwater_me = findViewById(R.id.citycoldwater) as TextView
         val silvercrest_me = findViewById(R.id.citysilvercrest) as TextView
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val ironforge_me = findViewById(R.id.cityironforge) as TextView
         val hillfar_me = findViewById(R.id.cityhillfar) as TextView
 
-
+        //City click listener
         coldwater_me.setOnClickListener(this)
         silvercrest_me.setOnClickListener(this)
         cliffsedge_me.setOnClickListener(this)
@@ -91,29 +91,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
        //The donkey
-        val scroll_start = findViewById(R.id.HorisontScroll) as HorizontalScrollView
+
         val donkey = findViewById(R.id.thedonkey) as ImageView
 
 
         //Menu
         val close_me = findViewById(R.id.close) as TextView
         val newgame_me = findViewById(R.id.newgame) as TextView
+        val savegame_me = findViewById(R.id.savegame) as TextView
         val loadgame_me = findViewById(R.id.loadgame) as TextView
-        close_me.setOnClickListener(this)
-        newgame_me.setOnClickListener() {
-             scroll_start.scrollTo(1080,430)
-             val imgResId = R.drawable.donkey
-             var resId = imgResId
-             donkey.setImageResource(resId)
-        }
+
         // Horisontal scroll
+        val scroll_start = findViewById(R.id.HorisontScroll) as HorizontalScrollView
         val map_me = findViewById(R.id.maplayout) as RelativeLayout
 
         //Sound
         mediaPlayer = MediaPlayer.create(this, R.raw.peaceonthewater)
-
         mediaPlayer?.start()
 
+        //Menu listeners and new game function
+        savegame_me.setOnClickListener(this)
+        loadgame_me.setOnClickListener(this)
+        close_me.setOnClickListener(this)
+        newgame_me.setOnClickListener() {
+            scroll_start.scrollTo(1080,430)
+            val imgResId = R.drawable.donkey
+            var resId = imgResId
+            donkey.setImageResource(resId)
+        }
 
 
 
@@ -122,7 +127,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-
+    //Function to collect the onlick functions
     override fun onClick(v: View?) {
         when (v?.getId()) {
             R.id.citycoldwater,
@@ -159,12 +164,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
+    // function to close the App
     private fun closeGame() {
         mediaPlayer?.stop()
         finishAffinity()
     }
 
+    //Function that loads a city on land
     private fun loadCityLand() {
         val intent = Intent(this, CityLand::class.java)
         // start your next activity
@@ -172,6 +178,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mediaPlayer?.stop()
     }
 
+    //Function that loads a city with a harbour
     private fun loadCityHarbour() {
         val intent = Intent(this, CityHarbour::class.java)
         // start your next activity
@@ -179,6 +186,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mediaPlayer?.stop()
     }
 
+    //Function that loads a city on high ground
     private fun loadCityHill() {
         val intent = Intent(this, CityHill::class.java)
         // start your next activity
@@ -186,6 +194,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mediaPlayer?.stop()
     }
 
+    //Function that loads a city on a lake
     private fun loadCityLake() {
         val intent = Intent(this, CityLand::class.java)
         // start your next activity
