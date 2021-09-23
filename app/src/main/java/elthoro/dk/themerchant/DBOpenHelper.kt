@@ -33,6 +33,8 @@ class DBOpenHelper(context: Context,
         onCreate(db)
     }
 
+
+
     fun addMerchant(merchant: Merchant) {
         val values = ContentValues()
         values.put(COLUMN_NAME, merchant.merchantName)
