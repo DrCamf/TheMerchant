@@ -4,11 +4,10 @@ class Donkey {
 
     var id: Int = 0
     var donkeyName: String? = null
-    var payload: String? = null
+    var merchantId: Int = 0
 
-    constructor(name: String, load: String) {
+    constructor(name: String, merchantid: Int) {
         this.donkeyName = name
-        this.payload = load
-
-    }
+        this.merchantId = merchantid
+     }
 }

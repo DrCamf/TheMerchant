@@ -57,6 +57,7 @@ class PreGameOpsetDB(context: Context,
         contentValues.put(COLUMN_CITY_Postion_Y, cities.cityPostion_Y)
         db.insert( TABLE_CITY, null, contentValues)
     }
+
     fun insertMarket(markets: Markets) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -66,12 +67,14 @@ class PreGameOpsetDB(context: Context,
         contentValues.put(COLUMN_MARKET_CITY_ID, markets.cityID)
         db.insert( TABLE_MARKET, null, contentValues)
     }
+
     fun insertWares(wares: Wares) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(COLUMN_WARES_NAME, wares.WaresNAME)
         db.insert( TABLE_WARES, null, contentValues)
     }
+
     fun insertMarketWares(marketWares: MarketWares) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -83,12 +86,13 @@ class PreGameOpsetDB(context: Context,
         contentValues.put(COLUMN_MARKETID , marketWares.MarketID)
         db.insert( TABLE_MARKET_WARES, null, contentValues)
     }
+
     fun insertVolumeType(volumeType: VolumeType) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(COLUMN_WARES_NAME, volumeType.volumeTypeNAME)
+        contentValues.put(COLUMN_VOLUMETYPE_DESCRIPTION, volumeType.volumeTypeDescription)
         db.insert( TABLE_VOLUMETYPE, null, contentValues)
-
     }
 
     companion object {
@@ -119,8 +123,10 @@ class PreGameOpsetDB(context: Context,
         val COLUMN_VOLUMETYPEID = "volumeType_id"
         val COLUMN_MARKETID = "market_id"
         val COLUMN_WARESID = "market_id"
+
         val TABLE_VOLUMETYPE = "VolumeType"
         val COLUMN_VOLUMETYPE_ID = "_id"
         val COLUMN_VOLUMETYPE_NAME = "volumeType"
+        val COLUMN_VOLUMETYPE_DESCRIPTION = "descrition"
     }
 }

@@ -4,6 +4,7 @@
     <string name="leave">Leave the city</string>
     <string name="closegame">Leave the game</string>
     <string name="newgame">Start a game</string>
+
     <string name="silvercrest">SilverCrest</string>
     <string name="cliffsedge">Cliffs Edge</string>
     <string name="coldwater">Cold Water</string>
@@ -32,6 +33,7 @@
     <string name="seameet">Seameet</string>
     <string name="snakescanyon">Snake’s Canyon</string>
     <string name="quelenesti">Quelenesti</string>
+
     <string name="loadgame">Load a saved game</string>
     <string name="title_activity_main2">MainActivity2</string>
     <!-- Strings used for fragments for navigation -->
@@ -43,4 +45,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="savegame">Save the game</string>
+    <string name="travel">Se her</string>
+    <string name="pos">Yeah</string>
+    <string name="neg">Neyyy</string>
 </resources>

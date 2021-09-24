@@ -1,5 +1,7 @@
 package elthoro.dk.themerchant
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,8 @@ import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var mediaPlayer: MediaPlayer
@@ -109,6 +113,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mediaPlayer = MediaPlayer.create(this, R.raw.peaceonthewater)
         mediaPlayer?.start()
 
+
+        donkey.setOnClickListener(){
+            val dialogBuilder = AlertDialog.Builder(this)
+            val inflater = this.layoutInflater
+            val dialogView = inflater.inflate(R.layout.dialogboxstyle, null)
+            dialogBuilder.setView(dialogView)
+
+                // if the dialog is cancelable
+                .setCancelable(true)
+                // positive button text and action
+                // positive button text and action
+                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                        dialog, id -> loadCityLand()
+                })
+                // negative button text and action
+                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+            // create dialog box
+            val alert = dialogBuilder.create()
+            // set title for alert dialog box
+
+            // show alert dialog
+
+            alert.show()
+
+        }
+
         //Menu listeners and new game function
         savegame_me.setOnClickListener(this)
         loadgame_me.setOnClickListener(this)
@@ -129,6 +161,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     //Function to collect the onlick functions
     override fun onClick(v: View?) {
+
         when (v?.getId()) {
             R.id.citycoldwater,
             R.id.citycliffsedge,
@@ -158,11 +191,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.cityironforge,
             R.id.cityhillfar -> loadCityHill()
             R.id.citylakestown ->loadCityLake()
-            R.id.close ->loadCityLake()
+            R.id.close ->closeGame()
             R.id.loadgame ->loadCityLake()
         }
     }
 
+    private fun mayVisit(): Boolean{
+
+
+
+
+        return true
+    }
 
     // function to close the App
     private fun closeGame() {
@@ -200,5 +240,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // start your next activity
         startActivity(intent)
         mediaPlayer?.stop()
+    }
+
+    class TravelDialogFragment : DialogFragment() {
+
+        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+            return activity?.let {
+                // Use the Builder class for convenient dialog construction
+                val builder = AlertDialog.Builder(it)
+                builder.setMessage(R.string.travel)
+                    .setPositiveButton(R.string.pos,
+                        DialogInterface.OnClickListener { dialog, id ->
+                            // Do stuff
+                        })
+                    .setNegativeButton(R.string.neg,
+                        DialogInterface.OnClickListener { dialog, id ->
+                            // User cancelled the dialog
+                        })
+                // Create the AlertDialog object and return it
+                builder.create()
+            } ?: throw IllegalStateException("Activity cannot be null")
+        }
     }
 }

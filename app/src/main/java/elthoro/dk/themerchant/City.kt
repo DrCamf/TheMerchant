@@ -12,4 +12,13 @@ class City {
         this.cityPostion_X = positionX
         this.cityPostion_Y = positionY
     }
+
+    constructor(name: String){
+        this.cityName = name
+
+    }
+
+    fun setNeighbours() {
+
+    }
 }

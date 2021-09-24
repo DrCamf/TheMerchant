@@ -6,6 +6,7 @@ class PreData {
         val wares = listOf(
             Wares("Herring"),
             Wares("Carrots"),
+            Wares("Travel beer"),
             Wares("Pickeld fish"),
             Wares("Smoked fish"),
             Wares("Salted herring"),
@@ -83,8 +84,24 @@ class PreData {
             City("redhawk", "1520dp", "252dp")
         )
 
+        val volumetype = listOf(
+            VolumeType("Pint", "0,565 Liters"),
+            VolumeType("Flaggon", "2 Liters"),
+            VolumeType("Piece", "Single item"),
+            VolumeType("Pound", "0,453 Kg"),
+            VolumeType("Kilo", "A Kilo"),
+            VolumeType("Barrel liquid", "5 liter, 7 pound weight in it self"),
+            VolumeType("Barrel non-liquid", "7 pound weight in it self"),
+            VolumeType("Sq yard", "Sqaure yard"),
+            VolumeType("Dozen", "12")
+        )
+
         /*val markets = listOf(
             Markets()
+        )*/
+
+        /*val marketwares = listOf(
+            MarketWares()
         )*/
 
     }
