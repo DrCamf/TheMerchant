@@ -2,7 +2,7 @@ package elthoro.dk.themerchant
 
 class PreData {
 
-    constructor() {
+
         val wares = listOf(
             Wares("Herring"),
             Wares("Carrots"),
@@ -53,7 +53,7 @@ class PreData {
             Wares("Bear fur")
         )
 
-        val cities = listOf(
+        var cities = listOf(
             City("silvercrest", "1400dp", "155dp" ),
             City("cliffsedge", "195dp", "1200dp"),
             City("coldwater", "580dp", "430dp"),
@@ -104,5 +104,5 @@ class PreData {
             MarketWares()
         )*/
 
-    }
+
 }

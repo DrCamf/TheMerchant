@@ -7,15 +7,15 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.HorizontalScrollView
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var mediaPlayer: MediaPlayer
+    lateinit var merchant: Merchant
+    lateinit var game: Game
+    lateinit var idfrom: String
 
 
 
@@ -150,18 +150,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val imgResId = R.drawable.donkey
             var resId = imgResId
             donkey.setImageResource(resId)
+            startGame()
         }
-
-
-
-
-
-
-    }
+   }
 
     //Function to collect the onlick functions
     override fun onClick(v: View?) {
-
+        idfrom = v?.getId().toString()
         when (v?.getId()) {
             R.id.citycoldwater,
             R.id.citycliffsedge,
@@ -198,10 +193,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun mayVisit(): Boolean{
 
+        return game.mayVisit(merchant.lastVisited.toString())
 
-
-
-        return true
     }
 
     // function to close the App
@@ -212,7 +205,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     //Function that loads a city on land
     private fun loadCityLand() {
-        val intent = Intent(this, CityLand::class.java)
+        Toast.makeText(this, idfrom, Toast.LENGTH_SHORT).show()
+        /*if(mayVisit()) {
+            val intent = Intent(this, CityLand::class.java)
+            // start your next activity
+            startActivity(intent)
+            mediaPlayer?.stop()
+        } else {
+            mayNotMessage()
+        }*/
+
+    }
+
+    private fun startGame() {
+
+
+        val intent = Intent(this, CityHarbour::class.java)
         // start your next activity
         startActivity(intent)
         mediaPlayer?.stop()
@@ -220,26 +228,48 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     //Function that loads a city with a harbour
     private fun loadCityHarbour() {
-        val intent = Intent(this, CityHarbour::class.java)
-        // start your next activity
-        startActivity(intent)
-        mediaPlayer?.stop()
+        Toast.makeText(this, idfrom, Toast.LENGTH_SHORT).show()
+        //merchant.lastVisited =
+       /* Toast.makeText(this, idfrom, Toast.LENGTH_SHORT).show()
+        if(mayVisit()) {
+            val intent = Intent(this, CityHarbour::class.java)
+            // start your next activity
+            startActivity(intent)
+            mediaPlayer?.stop()
+        }else {
+            mayNotMessage()
+        }*/
     }
 
     //Function that loads a city on high ground
     private fun loadCityHill() {
-        val intent = Intent(this, CityHill::class.java)
-        // start your next activity
-        startActivity(intent)
-        mediaPlayer?.stop()
+        Toast.makeText(this, idfrom, Toast.LENGTH_SHORT).show()
+       /* if(mayVisit()) {
+
+            val intent = Intent(this, CityHill::class.java)
+            // start your next activity
+            startActivity(intent)
+            mediaPlayer?.stop()
+        }else {
+            mayNotMessage()
+        }*/
     }
 
     //Function that loads a city on a lake
     private fun loadCityLake() {
-        val intent = Intent(this, CityLand::class.java)
-        // start your next activity
-        startActivity(intent)
-        mediaPlayer?.stop()
+        if(mayVisit()) {
+
+            val intent = Intent(this, CityLand::class.java)
+            // start your next activity
+            startActivity(intent)
+            mediaPlayer?.stop()
+        } else {
+            mayNotMessage()
+        }
+    }
+
+    private fun mayNotMessage() {
+        Toast.makeText(this, "Is not connected to the city you are in", Toast.LENGTH_SHORT).show()
     }
 
     class TravelDialogFragment : DialogFragment() {

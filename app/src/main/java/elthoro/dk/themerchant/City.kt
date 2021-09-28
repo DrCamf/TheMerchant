@@ -7,6 +7,8 @@ class City {
     var cityPostion_X: String? = null
     var cityPostion_Y: String? = null
 
+    var  neighbours: MutableList<String> = mutableListOf()
+
     constructor(name: String, positionX: String, positionY: String)  {
         this.cityName = name
         this.cityPostion_X = positionX
@@ -18,7 +20,8 @@ class City {
 
     }
 
-    fun setNeighbours() {
 
-    }
+
+
+
 }

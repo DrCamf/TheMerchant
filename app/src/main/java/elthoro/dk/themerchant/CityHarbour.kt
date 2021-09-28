@@ -7,12 +7,15 @@ import android.os.Bundle
 import android.widget.TextView
 
 class CityHarbour : AppCompatActivity() {
+    lateinit var merchant: Merchant
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_city_harbour)
 
         var mediaPlayer = MediaPlayer.create(this, R.raw.harborsounds)
         mediaPlayer?.start()
+
+
 
         val city_me = findViewById(R.id.leavecity) as TextView
 
@@ -21,6 +24,7 @@ class CityHarbour : AppCompatActivity() {
             // start your next activity
             startActivity(intent)
             mediaPlayer?.stop()
+
         }
     }
 }
