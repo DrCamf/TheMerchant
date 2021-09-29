@@ -13,6 +13,7 @@ class PreGameOpsetDB(context: Context,
 {
 
     override fun onCreate(p0: SQLiteDatabase) {
+        // Create the tables
         var CREATE_PRODUCTS_TABLE = ("CREATE TABLE " +
                 PreGameOpsetDB.TABLE_CITY + "("
                 + PreGameOpsetDB.COLUMN_CITY_ID + " INTEGER PRIMARY KEY," +
@@ -48,7 +49,7 @@ class PreGameOpsetDB(context: Context,
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
     }
-
+    //Function that insert into city table
     fun insertCity(cities: City) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -58,6 +59,7 @@ class PreGameOpsetDB(context: Context,
         db.insert( TABLE_CITY, null, contentValues)
     }
 
+    //Function that insert into market table
     fun insertMarket(markets: Markets) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -68,6 +70,7 @@ class PreGameOpsetDB(context: Context,
         db.insert( TABLE_MARKET, null, contentValues)
     }
 
+    //Function that insert into ware table
     fun insertWares(wares: Wares) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -75,6 +78,7 @@ class PreGameOpsetDB(context: Context,
         db.insert( TABLE_WARES, null, contentValues)
     }
 
+    //Function that insert into MarketWares table
     fun insertMarketWares(marketWares: MarketWares) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -87,6 +91,7 @@ class PreGameOpsetDB(context: Context,
         db.insert( TABLE_MARKET_WARES, null, contentValues)
     }
 
+    //Function that insert into VolumeType table
     fun insertVolumeType(volumeType: VolumeType) {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -95,6 +100,7 @@ class PreGameOpsetDB(context: Context,
         db.insert( TABLE_VOLUMETYPE, null, contentValues)
     }
 
+    // The Companion object that holds the info of the database and tables
     companion object {
         private val DATABASE_VERSION = 1
         private val DATABASE_NAME = "MerchantDB.db"

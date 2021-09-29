@@ -1,5 +1,6 @@
 package elthoro.dk.themerchant
 
+// The player class that creates the info for the player
 class Merchant {
 
     var id: Int = 0

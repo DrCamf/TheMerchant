@@ -17,14 +17,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var game: Game
     lateinit var idfrom: String
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         title = "The Merchant"
+
+
+        //Sound
+        mediaPlayer = MediaPlayer.create(this, R.raw.peaceonthewater)
+        mediaPlayer?.start()
 
         //****************** Cities *********************************************
         //Harbours
@@ -63,6 +65,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val ironforge_me = findViewById(R.id.cityironforge) as TextView
         val hillfar_me = findViewById(R.id.cityhillfar) as TextView
 
+        //The donkey
+        val donkey = findViewById(R.id.thedonkey) as ImageView
+
+        //Menu
+        val close_me = findViewById(R.id.close) as TextView
+        val newgame_me = findViewById(R.id.newgame) as TextView
+        val savegame_me = findViewById(R.id.savegame) as TextView
+        val loadgame_me = findViewById(R.id.loadgame) as TextView
+
+        // Horisontal scroll
+        val scroll_start = findViewById(R.id.HorisontScroll) as HorizontalScrollView
+        val map_me = findViewById(R.id.maplayout) as RelativeLayout
+
         //City click listener
         coldwater_me.setOnClickListener(this)
         silvercrest_me.setOnClickListener(this)
@@ -93,54 +108,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ironforge_me.setOnClickListener(this)
         hillfar_me.setOnClickListener(this)
 
-
-       //The donkey
-
-        val donkey = findViewById(R.id.thedonkey) as ImageView
-
-
-        //Menu
-        val close_me = findViewById(R.id.close) as TextView
-        val newgame_me = findViewById(R.id.newgame) as TextView
-        val savegame_me = findViewById(R.id.savegame) as TextView
-        val loadgame_me = findViewById(R.id.loadgame) as TextView
-
-        // Horisontal scroll
-        val scroll_start = findViewById(R.id.HorisontScroll) as HorizontalScrollView
-        val map_me = findViewById(R.id.maplayout) as RelativeLayout
-
-        //Sound
-        mediaPlayer = MediaPlayer.create(this, R.raw.peaceonthewater)
-        mediaPlayer?.start()
-
-
-        donkey.setOnClickListener(){
-            val dialogBuilder = AlertDialog.Builder(this)
-            val inflater = this.layoutInflater
-            val dialogView = inflater.inflate(R.layout.dialogboxstyle, null)
-            dialogBuilder.setView(dialogView)
-
-                // if the dialog is cancelable
-                .setCancelable(true)
-                // positive button text and action
-                // positive button text and action
-                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
-                        dialog, id -> loadCityLand()
-                })
-                // negative button text and action
-                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
-                        dialog, id -> dialog.cancel()
-                })
-            // create dialog box
-            val alert = dialogBuilder.create()
-            // set title for alert dialog box
-
-            // show alert dialog
-
-            alert.show()
-
-        }
-
         //Menu listeners and new game function
         savegame_me.setOnClickListener(this)
         loadgame_me.setOnClickListener(this)
@@ -152,7 +119,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             donkey.setImageResource(resId)
             startGame()
         }
-   }
+        //On map other listeners
+        donkey.setOnClickListener(this)
+    }
 
     //Function to collect the onlick functions
     override fun onClick(v: View?) {
@@ -188,19 +157,42 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.citylakestown ->loadCityLake()
             R.id.close ->closeGame()
             R.id.loadgame ->loadCityLake()
+            R.id.thedonkey -> donkeyClick()
         }
     }
 
+    // Function that return if player mey visit city
     private fun mayVisit(): Boolean{
-
         return game.mayVisit(merchant.lastVisited.toString())
-
     }
 
     // function to close the App
     private fun closeGame() {
         mediaPlayer?.stop()
         finishAffinity()
+    }
+
+    // Function to open what a view that shows what donkey is carring
+    private fun donkeyClick() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialogboxstyle, null)
+        dialogBuilder.setView(dialogView)
+
+            // if the dialog is cancelable
+            .setCancelable(true)
+            // positive button text and action
+            // positive button text and action
+            .setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                    dialog, id -> loadCityLand()
+            })
+            // negative button text and action
+            .setNegativeButton("Cancel", DialogInterface.OnClickListener {
+                    dialog, id -> dialog.cancel()
+            })
+        // create dialog box
+        val alert = dialogBuilder.create()
+        alert.show()
     }
 
     //Function that loads a city on land
@@ -217,9 +209,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    // Does what is says on the tin
     private fun startGame() {
-
-
         val intent = Intent(this, CityHarbour::class.java)
         // start your next activity
         startActivity(intent)
@@ -245,7 +236,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun loadCityHill() {
         Toast.makeText(this, idfrom, Toast.LENGTH_SHORT).show()
        /* if(mayVisit()) {
-
             val intent = Intent(this, CityHill::class.java)
             // start your next activity
             startActivity(intent)
@@ -258,7 +248,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     //Function that loads a city on a lake
     private fun loadCityLake() {
         if(mayVisit()) {
-
             val intent = Intent(this, CityLand::class.java)
             // start your next activity
             startActivity(intent)
@@ -268,10 +257,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // Standard message if player may not go to city
     private fun mayNotMessage() {
         Toast.makeText(this, "Is not connected to the city you are in", Toast.LENGTH_SHORT).show()
     }
 
+    // Eksperimental dialog
     class TravelDialogFragment : DialogFragment() {
 
         override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

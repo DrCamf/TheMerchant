@@ -1,5 +1,6 @@
 package elthoro.dk.themerchant
 
+// The class for the players trusty sidekick
 class Donkey {
 
     var id: Int = 0

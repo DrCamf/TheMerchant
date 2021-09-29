@@ -2,11 +2,12 @@ package elthoro.dk.themerchant
 
 
 
-
+/// Class that handles main game play
 class Game {
 
     var merchant = Merchant()
 
+    // Controls if player may visits city
     fun mayVisit(name: String): Boolean {
         var may = false
         var c = City(name)
@@ -22,13 +23,13 @@ class Game {
         return may
     }
 
+    // Function that set the "neighbours" to the city the player is in
     fun setNeighbours(cname: String): City {
         var info = PreData()
         var cities = info.cities
         var lokalCity = City(cname);
 
         when (cname) {
-
             "silvercrest" -> lokalCity.neighbours.add(cities[27].cityName.toString()) and
                     lokalCity.neighbours.add(cities[1].cityName.toString()) and lokalCity.neighbours.add(
                 cities[26].cityName.toString())
